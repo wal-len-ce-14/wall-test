@@ -196,6 +196,7 @@ void Store::_insert_list(int no, int _no){
 }
 
 void Store::_reverse(Node* first){
+	int _no = top-> no;
 	Node* fwd = first-> next;
 	Node* ptr = first;
 	Node* pre = NULL;
@@ -207,6 +208,10 @@ void Store::_reverse(Node* first){
 	}
 	ptr-> next = pre;
 	top = ptr;
+	while(ptr != NULL){
+        ptr-> no = _no--;
+        ptr = ptr-> next;
+    }
 }
 
 int main(){
@@ -306,28 +311,23 @@ int main(){
                 S1._insert_list(no, _no);
                 break;
             case 9:
+            	S1._reverse(S1.top_node());
                 sw = S1.print_top();
-                for(i = 0; i < sw; i++){
-                    reg-> push(S1.top_class(), S1.top_name());
-                    S1.pop();
-                }
                 file.open("data/linklist_data.txt", ios::out);
-                if(reg-> print_top() == 0) file << " ";
+                if(S1.print_top() == 0) file << " ";
                 else{
                     for(i = 0; i < sw; i++){
-                        file << reg-> top_class() << endl;
-                        file << reg-> top_name() << endl;
-                        reg-> pop();
+                        file << S1.top_class() << endl;
+                        file << S1.top_name() << endl;
+                        S1.pop();
                     }
                 }
-                delete reg;
                 file.close();
                 system("cls");
                 cout << "Data input completed." << endl;
                 break;
             case 0:
-            	S1._reverse(S1.top_node());
-//                system("cls");
+                system("cls");
                 break;
             default:
                 break;
