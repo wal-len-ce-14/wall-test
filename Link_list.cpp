@@ -18,6 +18,7 @@ class Store{
         Node* top = NULL;
         int no = 0;
     public:
+    	Node* top_node(){return top;}
         int print_top(){if(top == NULL) return 0; return top-> no;};
         Node::cate top_class(){return top-> cla;};
         string top_name(){return top-> name;}
@@ -30,6 +31,7 @@ class Store{
         void _insert(int, Node::cate, string);
         void _delete(int);
         void _insert_list(int no, int _no);
+        void _reverse(Node*);
 };
 
 void Store::push(Node::cate cla, string name){
@@ -193,6 +195,20 @@ void Store::_insert_list(int no, int _no){
     }
 }
 
+void Store::_reverse(Node* first){
+	Node* fwd = first-> next;
+	Node* ptr = first;
+	Node* pre = NULL;
+	while(fwd != NULL){
+		ptr-> next = pre;
+		pre = ptr;
+		ptr = fwd;
+		fwd = fwd-> next;
+	}
+	ptr-> next = pre;
+	top = ptr;
+}
+
 int main(){
     Store S1;
     Store* reg = new Store;
@@ -310,7 +326,8 @@ int main(){
                 cout << "Data input completed." << endl;
                 break;
             case 0:
-                system("cls");
+            	S1._reverse(S1.top_node());
+//                system("cls");
                 break;
             default:
                 break;
@@ -322,9 +339,3 @@ int main(){
     return 0;
 }
 
-void _clear(char t[], int s){
-    int i;
-    for(i = 0; i < s; i++){
-        t[i] = ' ';
-    }
-}

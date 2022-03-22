@@ -1,6 +1,2 @@
-index
-digital electronics
-index
-probability
-note
-60
+3
+class
