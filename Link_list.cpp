@@ -320,9 +320,9 @@ int main(){
                         file << S1.top_class() << endl;
                         file << S1.top_name() << endl;
                         S1.pop();
-                    }
-                }
-                file.close();
+	                    }
+	                }
+	                file.close();
                 system("cls");
                 cout << "Data input completed." << endl;
                 break;
