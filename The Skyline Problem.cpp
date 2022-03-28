@@ -15,8 +15,8 @@ int main(){
 		}
 		j++;
 	}
-	
-	int** skyline = getSkyline(buildings);
+	int *a = buildings[0];
+	int** skyline = getSkyline(&a);
 	
 	n = j;
 	for(j = 0; j < n; j++){
@@ -28,6 +28,16 @@ int main(){
 	return 0;
 }
 
-int *getSkyline(int* buildings){
-	int i, n = buildings[0][0];
+int **getSkyline(int** buildings){
+	int i, j = 0, n[20][2] = {0}, count, lay;
+	for(i = 0;;i++){
+		if(i = buildings[j][0]){
+			n[j][0] = buildings[j][0];
+			n[j][1] = buildings[j][2];
+		}
+		if()		
+	}
 }
+
+
+
