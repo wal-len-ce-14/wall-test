@@ -3,8 +3,8 @@
 #include<stdlib.h>
 #include<windows.h>
 using namespace std;
-#define W 60
-#define H 40
+#define W 60 
+#define H 40 
 
 int main(){
 	int i, j, k, l, x, y, nl, nd, con = 0;
