@@ -12,20 +12,45 @@ class Store{
 	account* top = NULL;
 	public:
 		void pop(string, string);
-		int search_com(string);
-		void delete_acc(string, string);
+		account* search_com(string, string);
+		void delete_acc(string);
 };
 
 void Store::pop(string acc, string pass){
-	
+	account* newacc = new account;
+	newacc-> name = acc;
+	newacc-> pass = pass;
+	newacc-> next = top;
+	top = newacc; 
 }
 
-int Store::search_com(string pass){
-	
+account* Store::search_com(string acc, string pass){
+	account* ptr = top;
+	while(ptr != NULL){
+		if(ptr-> name == acc){
+			if(ptr-> pass == pass){
+				cout << "login successful!!" << endl;
+				return ptr;
+			}
+		}else{
+			ptr = ptr-> next;
+		}
+	}
+	count << "Wrong account or password!!" << endl;
+	return NULL;
 } 
 
-void Store::delete_acc(string acc, string pass){
-	
+void Store::delete_acc(string acc){
+	account* ptr;
+	while(ptr != NULL){
+		if(ptr-> name == acc){
+			string p;
+			cout << "password: ";
+			cin.ignore();
+			cin >> p;
+			if(p == ptr-> pass)
+		}
+	} 
 }
  
 int main()
@@ -54,7 +79,7 @@ int main()
 				host-> search_compare(pass);
 				break;
 			case 3:
-				host-> delete_acc(acc, pass);
+				host-> delete_acc(acc);
 				break;
 		}
 	}
