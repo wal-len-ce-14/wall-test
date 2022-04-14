@@ -18,9 +18,11 @@ int main(){
 	char c;
 	while(conti){
 		for(i = 0; i < 5; i++){
-			cin >c 
-			no[i] = 
+			cin >> c >> n; 
+			suit[i] = c;
+			no[i] = n;
 		}
+		Deck
 	}
 	return 0;
 }
