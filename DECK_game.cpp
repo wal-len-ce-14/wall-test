@@ -188,24 +188,21 @@ main(){
 	char* su = new char[5];
 	int answer[10];
   	int i, j, n, con = 0, tim = 0;
+  	char c;
 	cout << "enter the decks:" << endl;
 	
-	while(con == 0){
+	while(con){
 		
 		for(i = 0; i < 5; i++){
-			char c = getchar();
+			cin >> c >> n;
 			su[i] = c;
-			cin.ignore();	
-			cin >> n;
 			no[i] = n;
-			cout << i << endl;
 		}
 		Deck D1(no, su);
 		for(i = 0; i < 5; i++){
-			char c = getchar();
-			cin >> n;
-			no[i] = n;
-			su[i] = c;	
+			cin >> c >> n;
+			su[i] = c;
+			no[i] = n;	
 		}
 		Deck D2(no, su);
 		
