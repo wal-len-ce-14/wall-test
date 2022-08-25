@@ -8,9 +8,9 @@ int main(void){
     int n;
     string str1;
 
-    cout << "¥¿¤è§ÎªºÃäªø¬°: ";
+    cout << "ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½: ";
     cin >> n;
-    cout << "½Ğ¿é¤J¦r¦ê: ";
+    cout << "ï¿½Ğ¿ï¿½Jï¿½rï¿½ï¿½: ";
     cin.ignore();
     getline(cin,str1);
     draw(n,str1);
