@@ -150,13 +150,13 @@ int main(){
     int nScore = 0;
     bool KeyDown[3];
     for(i = 0; i < 3; i++) KeyDown[i] = true;
-z    /// Game loop
+    /// Game loop
 
     while(GAME){
 
         /// Timeing
 
-        //Sleep(70);
+        Sleep(40);
         now = clock();
         if(now - base > nSpeed){
             nSpeedCount++;
@@ -184,11 +184,8 @@ z    /// Game loop
             px -= (KeyDown[1] && noCollide(px-1, py, r, CurrentPiece)) ? 1:0;
             KeyDown[1] = false;
         }else KeyDown[1] = true;
-        if(Key[2]){
-            py += (KeyDown[2] && noCollide(px, py+1, r, CurrentPiece)) ? 1:0;
-            KeyDown[2] = false;
-        }else KeyDown[2] = true;
 
+        py += (Key[2] && noCollide(px, py+1, r, CurrentPiece)) ? 1:0;
 
 
         if(Key[3]){
@@ -237,7 +234,9 @@ z    /// Game loop
                 // accelerate
                 if(nSpeed > 100) nSpeed -= 2;
             }
+
             forceDown = false;
+
         }
 
         /// OUTPUT
@@ -287,6 +286,7 @@ z    /// Game loop
         }
 
     }
+     if(!GAME) Sleep(2000);
 
     return 0;
 }
